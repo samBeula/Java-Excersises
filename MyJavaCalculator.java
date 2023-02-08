@@ -14,9 +14,9 @@ public class MyJavaCalculator {
         for(int i=0;i<l;i++){
             System.out.println("Enter " + i +"th number:");
             Scanner x = new Scanner(System.in);
-            n.add(x.nextInt());
+            n.add(x.nextFloat());
             if (i <= l-2){
-                System.out.println("Enter +/- :");
+                System.out.println("Enter +/-/*// :");
                 Scanner y = new Scanner(System.in);
                 s.add(y.next());
             }
@@ -27,16 +27,23 @@ public class MyJavaCalculator {
         }
         System.out.println(n.get(l-1)+" =");
 
-        int sum = (int) n.get(0);
+        float sum = (float) n.get(0);
         for(int i = 0; i < l-1; i++){
             switch (s.get(i)){
                 case "+" :
-                    sum = sum +(int) n.get(i+1);
+                    sum = sum + (float) n.get(i+1);
                     break;
                 case "-" :
-                    sum = sum -(int) n.get(i+1);
+                    sum = sum - (float) n.get(i+1);
+                    break;
+                case "*" :
+                    sum = sum * (float) n.get(i+1);
+                    break;
+                case "/" :
+                    sum = sum / (float) n.get(i+1);
                     break;
                 default :
+                    i = i - 1;
                     sum = sum;
                     break;
             }
