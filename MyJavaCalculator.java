@@ -43,7 +43,6 @@ public class MyJavaCalculator {
                     sum = sum / (float) n.get(i+1);
                     break;
                 default :
-                    i = i - 1;
                     sum = sum;
                     break;
             }
